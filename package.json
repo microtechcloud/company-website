@@ -1,0 +1,21 @@
+{
+  "name": "company-website",
+  "version": "1.0.0",
+  "description": "Company website",
+  "main": "app.js",
+  "repository": "https://github.com/microtechcloud/company-website.git",
+  "author": "leemlwando <leemlwando@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.1",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.5",
+    "morgan": "^1.9.1"
+  }
+}
