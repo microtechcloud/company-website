@@ -2264,7 +2264,7 @@ font-size: 12px;
 ------- Media Queries for Split Layout Ends ---------
 ---------------------------------------------------*/
 
-.img-header{height: 400px;}
+.img-header{height: 310px;}
 .img-service{height: 700px;width:  100%;}
 .img-info{height: 600px;/* width: 100%; */}
 
