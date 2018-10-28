@@ -49,6 +49,13 @@ app.use(function(req,res,next){
     next();
 });
 
+//set cache for assets
+app.use(function(req,res,next){
+    res.append("Cache-Control","public,max-age=31536000");
+    // res.append("Cache-Control","max-age=31536000");
+    next();
+});
+
 app.use("/",Routes);
     
 
