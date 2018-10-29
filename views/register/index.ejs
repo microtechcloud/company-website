@@ -42,6 +42,16 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
+                            <%if(message){%>
+                                <div class="alert alert-warning">
+                                <strong>Oppps!!!!</strong> <%=message%>
+                               <%if(fields){%>
+                                    <%fields.forEach(function(field,index){%>
+                                        <p><%=field%></p>
+                                    <%})%>
+                                <%}%>
+                                </div>
+                            <%}%>
                         <form role="form" method="post" action="/auth/register">
                             <fieldset>
                                 <div class="form-group">
@@ -59,11 +69,7 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Confirm Password" name="confirmPassword" type="password" value="">
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
+                                <p>Already Registered? Login <a href="/auth/login"> Here</a></p>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button class="btn btn-lg btn-success btn-block"> Login </button>
                             </fieldset>

@@ -6,20 +6,21 @@ module.exports = {
     initialization:()=>passport.initialize(),
     passportSession:()=>passport.session(),
     localStrategy: ()=>{
-        return passport.use(new localStrategy({
+        return passport.use("local",new localStrategy({
             usernameField:"email",
             passwordField:"password"
         },function(username,password,done){
+            console.log("autheticating...")
             User.findOne({email:username},function(err,user){
-                if(err){return done(err)};
-                if(!user){return done(null,false,{status:404,message:"user not found"})};
+                if(err){return done(err, false, {message:"an error occoured"})};
+                if(!user){return done(null,false,{status:404,message:"email is not registred, please register for you to login"})};
 
                 user.isEqual(password,function(err,isEqual){
-                    if(err){return done(err)};
+                    if(err){return done(err, false, {message:"could not authenticate password"})};
 
-                    if(!isEqual){return done(null,false)};
+                    if(!isEqual){return done(null,false, {message:"error occoured while authenticating password."})};
 
-                    return done(null,{firstName:user.firstName,lastName:user.lastName,email:user.email})
+                    return done(null,{firstName:user.firstName,lastName:user.lastName,email:user.email}, {message:"you have successfully logged in"})
                 })
 
             })

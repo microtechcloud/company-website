@@ -19,7 +19,8 @@ router.get("/auth/login",login.get);
  * POST LOGIN
 */
 
-router.post("/auth/login",passport.authenticate("local"),login.post);
+// router.post("/auth/login",passport.authenticate("local",{successRedirect:"/",failureRedirect:"/auth/login",failureFlash:true}));
+router.post("/auth/login",login.post);
 
 /**
  * GET REGISTER

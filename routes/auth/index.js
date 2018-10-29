@@ -4,11 +4,11 @@ const parseLogout = require("./parseLogout");
 
 module.exports = {
     login:{
-        get: (req,res,next)=>res.render("login/index"),
+        get: (req,res,next)=>res.render("login/index",{message:false}),
         post: (req,res,next)=>parseLogin(req,res,next)
     },
     register:{
-        get: (req,res,next)=>res.render("register/index"),
+        get: (req,res,next)=>res.render("register/index",{message:false}),
         post: (req,res,next)=>parseRegister(req,res,next)
 
     },

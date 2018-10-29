@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const session = require("express-session");
 const {db} = require("./lib/db");
@@ -18,7 +19,7 @@ const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"views"));
-
+app.use(flash());
 app.use(cors());
 app.use(logger("dev"));
 app.use(bodyParser.json());
