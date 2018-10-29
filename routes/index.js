@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {login,register,logout} = require('./auth');
+const {dashboard,adminLogin,adminForgotPassword,adminRegistration} = require('./admin');
 const passport = require('passport');
 
 router.get("/", (req,res,next)=>{
@@ -41,4 +42,28 @@ router.post("/auth/register",register.post);
 
 router.get("/auth/logout",logout.get);
 
+
+/**
+ * GET DASHBOARD
+*/
+
+router.get("/admin/dashboard",dashboard.get);
+
+/**
+ * GET ADMIN DASHBOARD LOGIN
+*/
+
+router.get("/auth/admin/login",adminLogin.get);
+
+/**
+ * GET ADMIN FORGOT PASSWORD
+*/
+
+router.get("/auth/admin/forgot_password",adminForgotPassword.get);
+
+/**
+ * GET ADMIN DASHBOARD REGISTRATION
+*/
+
+router.get("/auth/admin/registration",adminRegistration.get);
 module.exports = router;

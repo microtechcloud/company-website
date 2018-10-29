@@ -69,7 +69,7 @@ app.use(function(req,res,next){
 app.use(function(err,req,res,next){
 
     if(!err){return next()}
-    console.log(err)
+    // console.log(err)
     let error = {};
     error.status = err.status;
     error.message = err.message;
