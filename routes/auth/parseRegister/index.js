@@ -17,6 +17,10 @@ module.exports = (req,res,next)=>{
         return res.render("register/index",{message:"some fields missing",fields:missingKeys});
     };
 
+    if(confirmPassword && confirmPassword !== password){
+        return res.render("register/index",{message:"passwords do not match",fields:missingKeys})
+    }
+
 
     User.create({firstName,lastName,email,password},function(err,user){
         console.log(err)

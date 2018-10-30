@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {login,register,logout} = require('./auth');
 const {dashboard,adminLogin,adminForgotPassword,adminRegistration} = require('./admin');
+const {subscription} = require('./newsletter');
 const passport = require('passport');
 
 router.get("/", (req,res,next)=>{
@@ -66,4 +67,11 @@ router.get("/auth/admin/forgot_password",adminForgotPassword.get);
 */
 
 router.get("/auth/admin/registration",adminRegistration.get);
+
+/**
+ * POST NEWS LETTER SUBSCRIPTION
+*/
+
+router.post("/newsletter/subscription",subscription.post);
+
 module.exports = router;

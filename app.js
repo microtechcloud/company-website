@@ -50,12 +50,12 @@ app.use(function(req,res,next){
     next();
 });
 
-//set cache for assets
-app.use(function(req,res,next){
-    res.append("Cache-Control","public,max-age=31536000");
-    // res.append("Cache-Control","max-age=31536000");
-    next();
-});
+// //set cache for assets
+// app.use(function(req,res,next){
+//     res.append("Cache-Control","public,max-age=31536000");
+//     // res.append("Cache-Control","max-age=31536000");
+//     next();
+// });
 
 app.use("/",Routes);
     
@@ -69,7 +69,9 @@ app.use(function(req,res,next){
 app.use(function(err,req,res,next){
 
     if(!err){return next()}
-    // console.log(err)
+    
+    console.log(err)
+    console.log(req.user)
     let error = {};
     error.status = err.status;
     error.message = err.message;

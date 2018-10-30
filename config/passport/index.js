@@ -20,7 +20,7 @@ module.exports = {
 
                     if(!isEqual){return done(null,false, {message:"error occoured while authenticating password."})};
 
-                    return done(null,{firstName:user.firstName,lastName:user.lastName,email:user.email}, {message:"you have successfully logged in"})
+                    return done(null,{firstName:user.firstName,lastName:user.lastName,email:user.email, NewsLetter:user.newsLetter}, {message:"you have successfully logged in"})
                 })
 
             })
@@ -40,7 +40,7 @@ module.exports = {
             User.findOne({email:user.email},function(err,isUser){
                 if(err || !isUser){return done(err || {status:404,message:"failed to deserialize user"})};
 
-                return done(null,user);
+                return done(null,{firstName:isUser.firstName,lastName:isUser.lastName,email:isUser.email, NewsLetter:isUser.newsLetter});
             })
         })
     }

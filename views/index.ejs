@@ -32,11 +32,12 @@
             <!-- <li><a class="page-scroll" href="#review-section">Reviews</a></li> -->
             <!-- <li><a class="page-scroll" href="#pricing">Pricing</a></li> -->
             <%if(user){%>
+              <li><a class="page-scroll" href="#main">Hello <%=user.firstName%></a></li>
             <li><a class="page-scroll" href="#main">Home</a></li>
             <li><a class="page-scroll" href="#features">Products</a></li>
             <li><a class="" href="#contact">Contact</a></li>
             <li><a class="" href="/admin/dashboard">DashBoard</a></li>
-            <li><a class="" href="/auth/logout">Logout</a></li>
+            <li><a class="" id="logout" href="#">Logout</a></li>
             <%}else{%>
 
               <li><a class="page-scroll" href="#main">Home</a></li>
@@ -397,18 +398,49 @@
     <div class="cta-sub no-color" id="contact">
       <div class="container">
         <div class="cta-inner">
-          <h1 class="wow fadeInUp" data-wow-delay="0s">Sign Up to Our Newsletter and get exciting offers</h1>
-          <p class="wow fadeInUp" data-wow-delay="0.2s"> Enter your email address we promise, never disclose<br class="hidden-xs">
-             or sell your email address. </p>
-          <div class="form wow fadeInUp" data-wow-delay="0.3s">
-            <form class="subscribe-form center-form wow zoomIn" action="php/subscribe.php" method="post" name="subscribeform" id="subscribeform">
-              <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off" id="subemail">
-              <input class="submit-button" type="submit" value="Subscribe" name="send" id="subsubmit">
-            </form>
-              <!-- subscribe message -->
-        <div id="mesaj"></div>
-        <!-- subscribe message --> 
-          </div>
+        
+            <%if(user && user.NewsLetter.subscribed){%>
+              <h1 class="wow fadeInUp" data-wow-delay="0s"> MicroTech Cloud Solutions is Zambias First And Number One Api Provider for A range of Awesome Cloud Services</h1>
+                <p class="wow fadeInUp" data-wow-delay="0.2s"> All You Need To do Register For The Service of Your Choice<br class="hidden-xs">
+                  Query Our APIs And We Handle The Rest </p>
+                <div class="form wow fadeInUp" data-wow-delay="0.3s">
+                <p center-form wow zoomIn" name="subscribeform">
+                    We Love <code></>Code :-)</></code>
+                    </p>>
+                       <!-- subscribe message -->
+                  <div id="mesaj"></div>
+                  <!-- subscribe message --> 
+                    </div>
+              <%}else if(user && !user.NewsLetter.subscribed){%>
+                <h1 class="wow fadeInUp" data-wow-delay="0s">Sign Up to Our Newsletter and get exciting offers</h1>
+                <p class="wow fadeInUp" data-wow-delay="0.2s"> Enter your email address we promise, never disclose<br class="hidden-xs">
+                   or sell your email address. </p>
+                <div class="form wow fadeInUp" data-wow-delay="0.3s">
+                <form class="subscribe-form center-form wow zoomIn" name="subscribeform" id="subscribeform">
+                    <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off" id="subemail">
+                    <input class="submit-button" type="submit" value="Subscribe" name="send" id="subsubmit">
+                  </form>
+                       <!-- subscribe message -->
+                  <div id="mesaj"></div>
+                  <!-- subscribe message --> 
+                    </div>
+              <%}else{%>
+                <h1 class="wow fadeInUp" data-wow-delay="0s">Sign Up to Our Newsletter and get exciting offers</h1>
+                <p class="wow fadeInUp" data-wow-delay="0.2s"> Enter your email address we promise, never disclose<br class="hidden-xs">
+                   or sell your email address. </p>
+                <div class="form wow fadeInUp" data-wow-delay="0.3s">
+                <form class="subscribe-form center-form wow zoomIn" name="subscribeform" id="subscribeform">
+                    <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off" id="subemail">
+                    <input class="submit-button" type="submit" value="Subscribe" name="send" id="subsubmit">
+                  </form>
+                       <!-- subscribe message -->
+                  <div id="mesaj"></div>
+                  <!-- subscribe message --> 
+                    </div>
+                <%}%>
+             
+            
+         
         </div>
       </div>
     </div>
@@ -450,5 +482,6 @@
 <script type="text/javascript" src="/static/js/menu.js"></script> 
 <script type="text/javascript" src="/static/js/custom.js"></script>
 <script src="/static/js/jquery.subscribe.js"></script> 
+<script src="/static/js/main.js"></script>
 </body>
 </html>
