@@ -11,7 +11,7 @@ const path = require('path');
 const createError = require("http-errors");
 const Routes = require('./routes');
 const {initialization,passportSession,localStrategy,serializUser,deserializeUser} = require('./config/passport');
-
+const confusion = require("confusionjs");
 
 const app = express();
 
@@ -19,9 +19,10 @@ const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"views"));
+app.use(confusion({root:"./static",store:"confuse", debug:true, cache:true}));
 app.use(flash());
 app.use(cors());
-app.use(logger("dev"));
+// app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -70,8 +71,8 @@ app.use(function(err,req,res,next){
 
     if(!err){return next()}
     
-    console.log(err)
-    console.log(req.user)
+    // console.log(err)
+    // console.log(req.user)
     let error = {};
     error.status = err.status;
     error.message = err.message;

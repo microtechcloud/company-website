@@ -6,8 +6,8 @@ const {subscription} = require('./newsletter');
 const passport = require('passport');
 
 router.get("/", (req,res,next)=>{
-    console.log("session", req.session);
-    console.log("user",req.user);
+    // console.log("session", req.session);
+    // console.log("user",req.user);
     res.render("index")
 });
 
