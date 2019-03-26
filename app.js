@@ -19,7 +19,7 @@ const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"views"));
-app.use(confusion({root:"./static",store:"confuse", debug:true, cache:true}));
+app.use(confusion({root:"./static",store:"confuse", debug:true}));
 app.use(flash());
 app.use(cors());
 // app.use(logger("dev"));

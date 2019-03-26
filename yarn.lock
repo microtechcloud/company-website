@@ -296,10 +296,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-confusionjs@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/confusionjs/-/confusionjs-1.0.4.tgz#ca706f0db875617ddfa8e45f89a298143bf43666"
-  integrity sha512-oZJdVuWMPv5NX9Sk7mQNnONyNVIFsDuc5j9SFhMU7a/QaB9cq7K82r92yEnBQdEZ7SgYVMvqMsGxlchOJTOYcw==
+confusionjs@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/confusionjs/-/confusionjs-1.0.5.tgz#b4f7e7a130cd06b646215371f9f473dbc370fa5a"
+  integrity sha512-yJNPQ9Bud932IehOOJuSXFBqrEjr+UNXtF/ylIDEN4Lq80dle+FI0/1NFasQlREJDlDRn1qd4HuLatlj+4QipA==
   dependencies:
     javascript-obfuscator "^0.18.1"
     uuid "^3.3.2"
