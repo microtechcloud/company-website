@@ -7,6 +7,11 @@
   "author": "leemlwando <leemlwando@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "tests": "mocha",
+    "start": "export NODE_ENV=production && pm2 start ./www/index.js --name=\"microtechcloud\"",
+    "dev": "export NODE_ENV=development && nodemon ./www"
+  },
   "dependencies": {
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",

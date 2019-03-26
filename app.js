@@ -15,7 +15,7 @@ const confusion = require("confusionjs");
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3040;
 
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"views"));
